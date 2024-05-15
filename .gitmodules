@@ -1,0 +1,4 @@
+[submodule "dify"]
+  path = dify
+  url = https://github.com/langgenius/dify.git
+  tag = 0.6.8
