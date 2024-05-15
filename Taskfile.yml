@@ -1,0 +1,31 @@
+version: "3"
+
+vars: {}
+dotenv: [".env"]
+env: {}
+
+tasks:
+  # 初期環境構築用タスク
+  init:
+    desc: Initialize project.
+    deps:
+      - clean
+    cmds:
+      - git submodule init
+      - git submodule update
+  clean:
+    desc: Clean files.
+    cmds:
+      - cd dify && git clean -xdf .
+
+  upt:
+    desc: Start dify app.
+    dir: dify/docker
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop dify app.
+    dir: dify/docker
+    cmds:
+      - docker compose down -d
