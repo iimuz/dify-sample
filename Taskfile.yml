@@ -28,4 +28,4 @@ tasks:
     desc: Stop dify app.
     dir: dify/docker
     cmds:
-      - docker compose down -d
+      - docker compose down
